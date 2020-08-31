@@ -69,9 +69,9 @@ export default {
       this.article = res.data
       this.author = res.data.author.nick_name
       this.like = res.data.like
-      this.content = res.data.content.replace('src="/media', 'src="http://127.0.0.1:8080/media')
+      // this.content = res.data.content.replace('src="/media', 'src="http://127.0.0.1:8080/media')
       console.log(res.data);
-      // this.content = res.data.content
+      this.content = res.data.content
 
     })
     // const data = JSON.stringify({"read":"1"})
