@@ -70,13 +70,13 @@ export default {
       this.author = res.data.author.nick_name
       this.like = res.data.like
       // this.content = res.data.content.replace('src="/media', 'src="http://127.0.0.1:8080/media')
-      console.log(res.data);
+      // console.log(res.data);
       this.content = res.data.content
 
     })
     // const data = JSON.stringify({"read":"1"})
     this.$http.put('articles/' + this.id + '/updateRead/', {"read": "1"}).then(res => {
-      console.log(res.data);
+      // console.log(res.data);
     })
   }
 }

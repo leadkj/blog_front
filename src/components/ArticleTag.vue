@@ -28,7 +28,7 @@
 		created() {
 			const tagid = this.$route.params.id
 			this.$http.get('articles/?tag=' + tagid).then(res => {
-				console.log(res.data);
+				// console.log(res.data);
 				this.ArticleTagList = res.data.results
 			})
 		}

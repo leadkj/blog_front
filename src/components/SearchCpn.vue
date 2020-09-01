@@ -32,7 +32,7 @@
 		created() {
 			const keyword = this.$route.params.keyword
 			this.$http.get('articles/?content=' + keyword).then(res => {
-				console.log(res.data);
+				// console.log(res.data);
 				this.searchList = res.data.results
 				if (this.searchList.length == 0) {
 					this.res = false
