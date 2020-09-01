@@ -75,7 +75,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
 
     document.title = to.meta.title
-    console.log(to);
+    // console.log(to);
     next()
 })
 export default router
