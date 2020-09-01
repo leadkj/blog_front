@@ -14,7 +14,7 @@ const routes = [
         path: '/',
         redirect: '/index',
         meta: {
-            title: '我的博客'
+            title: '首页'
         }
     },
     {
@@ -22,7 +22,7 @@ const routes = [
         name: 'Index',
         component: IndexCpn,
         meta: {
-            title: '我的博客',
+            title: '首页',
         }
     },
     {
