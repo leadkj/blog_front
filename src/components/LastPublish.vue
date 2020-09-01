@@ -23,7 +23,7 @@
         }
     },
     created() {
-    	this.$http.get("articles/?page_size=7").then(res =>{
+    	this.$http.get("articles/?page_size=7&ordering=-read").then(res =>{
     		this.articles = res.data.results
         })
 		}

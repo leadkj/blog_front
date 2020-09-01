@@ -3,7 +3,7 @@ import { Button } from 'element-ui'
 import {Menu,MenuItem,Submenu} from 'element-ui'
 import {Select,Option} from "element-ui";
 import {Row,Col} from "element-ui";
-import {Link,Divider,Input} from "element-ui";
+import {Link,Divider,Input,Avatar} from "element-ui";
 
 Vue.use(Button)
 Vue.use(Menu)
@@ -16,3 +16,4 @@ Vue.use(Col)
 Vue.use(Link)
 Vue.use(Divider)
 Vue.use(Input)
+Vue.use(Avatar)

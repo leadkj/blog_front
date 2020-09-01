@@ -2,7 +2,7 @@
     <div class="topnav">
 
         <div class="title">
-            <h3>我的博客</h3>
+            <h3>WJX的博客</h3>
         </div>
         <div class="nav">
           <span class="navlist">
