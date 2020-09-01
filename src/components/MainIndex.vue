@@ -21,6 +21,7 @@
         </el-col>
       </el-row>
     </div>
+    <Footer></Footer>
   </div>
 
 </template>
@@ -30,10 +31,10 @@ import NavTop from "./NavTop";
 import LastPublish from "./LastPublish";
 import TagList from "./TagList";
 import AbloutMe from "@/components/AbloutMe";
-
+import Footer from "@/components/Footer";
 export default {
   name: "MainIndex",
-  components: {TagList, NavTop, LastPublish, AbloutMe},
+  components: {TagList, NavTop, LastPublish, AbloutMe,Footer},
   computed: {
     key() {
       return this.$route.path + Math.random()
