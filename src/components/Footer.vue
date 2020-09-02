@@ -16,7 +16,7 @@ name: "Footer"
    position: fixed;
    bottom: 0;
    color: #ffffff;
-   height: 20px;
+   height: 23px;
    background-color: #2b4b6b;
    width: 100%;
    opacity: .90;

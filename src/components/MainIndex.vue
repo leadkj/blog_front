@@ -17,6 +17,7 @@
             <ablout-me></ablout-me>
             <last-publish></last-publish>
             <tag-list></tag-list>
+            <chat-cpn></chat-cpn>
           </div>
         </el-col>
       </el-row>
@@ -32,9 +33,10 @@ import LastPublish from "./LastPublish";
 import TagList from "./TagList";
 import AbloutMe from "@/components/AbloutMe";
 import Footer from "@/components/Footer";
+import ChatCpn from "@/components/ChatCpn";
 export default {
   name: "MainIndex",
-  components: {TagList, NavTop, LastPublish, AbloutMe,Footer},
+  components: {TagList, NavTop, LastPublish, AbloutMe,Footer,ChatCpn},
   computed: {
     key() {
       return this.$route.path + Math.random()

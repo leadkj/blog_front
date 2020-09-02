@@ -7,7 +7,7 @@ import './assets/css/global.less'
 import axiso from 'axios'
 
 // axios.defaults.headers.put['Content-Type']="text/plain"
-axios.defaults.baseURL = "http://127.0.0.1:8080/api/v1/"
+axios.defaults.baseURL = "http://api.weijx.top/api/v1/"
 // axios.defaults.headers.put['Content-Type']="application/x-www-form-urlencoded"
 Vue.prototype.$http = axios
 
