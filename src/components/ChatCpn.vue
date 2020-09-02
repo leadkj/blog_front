@@ -46,7 +46,7 @@ export default {
     }
   },
   mounted() {
-    this.socket = new WebSocket("ws://127.0.0.1:8080/api/v1/send_once/")
+    this.socket = new WebSocket("ws://api.weijx.top/api/v1/send_once/")
     this.socket.onopen = () => {
       this.socket.send('上线')
       // console.log('socket opened')
