@@ -24,7 +24,7 @@ export default {
 
   },
   mounted() {
-    this.socket = new WebSocket('ws://localhost:8080/api/v1/push_attack_log/')
+    this.socket = new WebSocket('ws://api.weijx.top/api/v1/push_attack_log/')
     this.socket.onopen = () => {
       this.socket.send('iamhere')
     }
