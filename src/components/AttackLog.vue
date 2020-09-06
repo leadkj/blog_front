@@ -1,7 +1,7 @@
 <template>
   <div class="panel panel-default ">
     <div class="panel-heading">
-      <h3 class="panel-title">攻击日志</h3>
+      <h3 class="panel-title">非法访问日志</h3>
 
     </div>
     <div class="panel-body textContainer" ref="textContainer">
