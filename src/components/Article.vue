@@ -58,7 +58,7 @@ export default {
     likeClick() {
       this.$http.put('articles/' + this.id + '/updateLike/', {"like": "1"}).then(res => {
         this.like = res.data.like
-        console.log(res.data);
+        // console.log(res.data);
       })
     }
 
