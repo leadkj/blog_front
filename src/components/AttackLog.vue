@@ -29,7 +29,7 @@ export default {
       this.socket.send('iamhere')
     }
     this.socket.onmessage = (res) => {
-      console.log(res);
+      // console.log(res);
       this.log_list.push(res.data)
       this.$nextTick(function () {
         let container = this.$refs.textContainer;
