@@ -1,15 +1,46 @@
 pipeline {
     agent any
-
+    environment{
+        PACKAGE_NAME = ""
+    }
     stages {
-        stage('Pull code............') {
+        stage('def variables...') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/${branch}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '13c49a9b-bbce-4282-a4fa-7604940753c0', url: 'https://github.com/leadkj/blog_front.git']]])
+                script {
+                    PACKAGE_NAME = sh(script: "date +%Y%m%d%H%M%S_${BUILD_NUMBER}.tgz", returnStdout: true)
+                    //定义的变量无法在多行shell中使用
+                    echo "${PACKAGE_NAME}"
+                }
             }
         }
-        stage('Build project............') {
+        stage('pull code.....') {
             steps {
-                bat 'npm run build'
+                checkout([$class: 'GitSCM', branches: [[name: '*/${branch}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9da17123-3b12-4c17-8542-3b4ab650b6af', url: 'https://github.com/leadkj/blog_front.git']]])
+            }
+        }
+        stage('build code.....') {
+            steps {
+                sh "sed -i 's/127.0.0.1/api.weijx.top/' src/main.js"
+                sh "cnpm install;cnpm run build"
+            }
+        }
+        stage('package code.....') {
+            steps {
+                sh '''
+                tar zcf /tmp/${JOB_NAME}_${BUILD_NUMBER}.tgz dist
+                '''
+            }
+        }
+        stage('deploy package.....') {
+            steps {
+                sh "ansible aliyun -m copy -a 'src=/tmp/${JOB_NAME}_${BUILD_NUMBER}.tgz dest=/opt/backup/blog_front'"
+                sh "ansible aliyun -m shell -a 'cd /opt/backup/blog_front;tar -zxf ${JOB_NAME}_${BUILD_NUMBER}.tgz;sh /opt/deploy_cmd/blog_front.sh'"
+
+            }
+        }
+        stage('delete package.....') {
+            steps {
+                sh "rm -f /tmp/${JOB_NAME}_${BUILD_NUMBER}.tgz"
             }
         }
     }
